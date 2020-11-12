@@ -2,7 +2,7 @@ version: "3"
 
 services:
   demodb:
-    container_name: "apidemodb"
+    container_name: apidemo_db
     image: mysql
     command: --default-authentication-plugin=mysql_native_password
     restart: always
@@ -13,7 +13,16 @@ services:
     ports:
       - 3306:3306
   adminer:
+    container_name: apidemo_adminer
     image: adminer
     restart: always
     ports:
       - 8080:8080
+  cfml:
+    container_name: apidemo_cfml
+    image: lucee/lucee
+    volumes:
+      - "./www:/var/www"
+      - "./password.txt:/opt/lucee/server/lucee-server/context/password.txt"
+    ports:
+      - 4040:8888

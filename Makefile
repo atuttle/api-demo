@@ -1,6 +1,6 @@
 up:
 	docker-compose up -d
-	box server start
+	open http://localhost:4040
 
 taffy:
 	@echo Downloading Taffy...
@@ -10,9 +10,9 @@ taffy:
 
 clean:
 	rm -rf www/taffy
-	box server stop
-	yes | box server forget
 
 down:
-	box server stop
 	docker-compose down
+
+adminer:
+	open http://localhost:8080/?server=demodb&username=root
