@@ -7,3 +7,5 @@ It includes a mysql database in a container, and [Lucee](https://www.lucee.org) 
 Run `make up` to install and start the docker containers, then run `make taffy` to install Taffy.
 
 If you need a quick & dirty admin interface for the database, run `make adminer`. The root password is "guest". (Uses [adminer](https://github.com/TimWolla/docker-adminer))
+
+If you want some sample blog data to get started with, run `make adminer`, login (the root password is "guest"), and import the file `initial-db.sql` from this repo. It will create a database named blog, with some blog-like tables and a small amount of sample data to get you started.
